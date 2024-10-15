@@ -1,0 +1,81 @@
+@startuml Pacman
+class Juego {
++Iniciar()
++Pausar()
++Reiniciar()
+}
+class Color{}
+class amarillo{}
+class rojo{}
+class azul{}
+class rosa{}
+class naranja{}
+class Personaje{
++Mover()
++Morir()
++Cambiarestado(esd)
++Chocar()
+-Posicion:Px
+-Color:cPerson
+-Estado:esd
+}
+class Fantasma{
++Seguir()
++Escapar()
+}
+class Pacman{
++Comer()
+}
+class Contador{
++Aumentarcontador()
+-numeracionDecimal
+}
+class Puntaje{}
+class Vida{}
+class Objeto{}
+class Pildora{}
+class Superpildora{}
+class Fruta{}
+class Mapa{}
+class Paredes {
+}
+class Posicion{
+-posicionEnx
+-posicionEny
+}
+class Estado{
+-predador
+-presa
+}
+class Jugador{}
+class Maquina()
+Juego o--Puntaje
+Juego *-- Mapa
+Mapa *-- Paredes
+Juego  *-- "5" Personaje 
+Juego *--Objeto
+Puntaje o--Contador
+Vida o--Contador
+Objeto *--Color
+Personaje *--Color
+Pacman --|>Personaje
+Pacman o--Objeto
+Pacman o--Fantasma
+Pacman *--Vida
+Pildora --|>Objeto
+Fruta--|>Objeto
+Superpildora--|>Objeto
+Fantasma --|>Personaje
+Personaje *-- Posicion
+Paredes *-- Posicion
+Objeto *-- Posicion
+Maquina o-- Juego
+Jugador *-- Juego
+amarillo --|> Color
+rojo --|> Color
+azul --|> Color
+rosa --|> Color
+naranja --|> Color
+Personaje *-- Estado
+
+@enduml
