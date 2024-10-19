@@ -48,7 +48,7 @@ class Estado{
 -presa
 }
 class Jugador{}
-class Maquina()
+class Maquina
 Juego o--Puntaje
 Juego *-- Mapa
 Mapa *-- Paredes
